@@ -1,0 +1,27 @@
+{
+  "name": "kurento-module-platedetector",
+  "description": "",
+  "homepage": "http://www.kurento.com",
+  "main": "dist/kurento-module-platedetector.js",
+  "authors": [
+    "Kurento <info@kurento.com> (http://kurento.org)"
+  ],
+  "license": "LGPL",
+  "repository": {
+    "type": "git",
+    "url": "Kurento/kurento-module-platedetector-js"
+  },
+  "keywords": [
+    "API",
+    "Kurento",
+    "KWS",
+    "SDK",
+    "web",
+    "WebRTC"
+  ],
+  "ignore": [
+    "doc/",
+    "lib/",
+    "package.json"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "kurento-module-platedetector",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "http://www.kurento.com",
+  "main": "lib/index.js",
+  "author": "Kurento <info@kurento.com> (http://kurento.org)",
+  "license": "LGPL",
+  "repository": {
+    "type": "git",
+    "url": "Kurento/kurento-module-platedetector-js"
+  },
+  "bugs": {
+    "url": "Kurento/kurento-module-platedetector-js/issues",
+    "email": "info@kurento.com"
+  },
+  "keywords": [
+    "API",
+    "Kurento",
+    "KWS",
+    "SDK",
+    "web",
+    "WebRTC"
+  ],
+  "dependencies": {
+    "inherits": "^2.0.1",
+    "kurento-client-core": "^5.0.0",
+    "kurento-client-elements": "^5.0.0",
+    "kurento-client-elements": "^5.0.0"
+  },
+  "peerDependencies": {
+    "kurento-client": "^5.0.0-dev"
+  }
+}
