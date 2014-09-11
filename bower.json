@@ -1,6 +1,6 @@
 {
   "name": "kurento-module-platedetector",
-  "description": "",
+  "description": "Plate Detector Filter",
   "homepage": "http://www.kurento.com",
   "main": "dist/kurento-module-platedetector.js",
   "authors": [

@@ -4,7 +4,7 @@ Copyright © 2013-2014 Kurento. Licensed under [LGPL License].
 
 kurento-module-platedetector
 ============
-
+Plate Detector Filter
 
 
 What is Kurento

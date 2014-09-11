@@ -1,7 +1,7 @@
 {
   "name": "kurento-module-platedetector",
-  "version": "0.0.1",
-  "description": "",
+  "version": "Kurento/kurento-module-platedetector-js#develop",
+  "description": "Plate Detector Filter",
   "homepage": "http://www.kurento.com",
   "main": "lib/index.js",
   "author": "Kurento <info@kurento.com> (http://kurento.org)",
@@ -25,8 +25,8 @@
   "dependencies": {
     "inherits": "^2.0.1",
     "kurento-client-core": "Kurento/kurento-client-core-js#develop",
-    "kurento-client-elements": "5.0.0",
-    "kurento-client-filters": "5.0.0"
+    "kurento-client-elements": "Kurento/kurento-client-elements-js#develop",
+    "kurento-client-filters": "Kurento/kurento-client-filters-js#develop"
   },
   "peerDependencies": {
     "kurento-client": "Kurento/kurento-client-core-js#develop"
