@@ -1,6 +1,6 @@
 {
   "name": "kurento-module-platedetector",
-  "version": "Kurento/kurento-module-platedetector-js#develop",
+  "version": "0.0.1-dev",
   "description": "Plate Detector Filter",
   "homepage": "http://www.kurento.com",
   "main": "lib/index.js",
@@ -11,8 +11,7 @@
     "url": "Kurento/kurento-module-platedetector-js"
   },
   "bugs": {
-    "url": "Kurento/kurento-module-platedetector-js/issues",
-    "email": "info@kurento.com"
+    "email": "kurento@googlegroups.com"
   },
   "keywords": [
     "API",
