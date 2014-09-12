@@ -28,6 +28,6 @@
     "kurento-client-filters": "Kurento/kurento-client-filters-js#develop"
   },
   "peerDependencies": {
-    "kurento-client": "Kurento/kurento-client-core-js#develop"
+    "kurento-client": "5.0.0-dev"
   }
 }
