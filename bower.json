@@ -1,24 +1,22 @@
 {
   "name": "kurento-module-platedetector",
   "description": "Plate Detector Filter",
-  "homepage": "http://www.kurento.com",
   "main": "dist/kurento-module-platedetector.js",
-  "authors": [
-    "Kurento <info@kurento.com> (http://kurento.org)"
-  ],
-  "license": "LGPL",
-  "repository": {
-    "type": "git",
-    "url": "Kurento/kurento-module-platedetector-js"
-  },
-  "keywords": [
-    "API",
-    "Kurento",
-    "WebRTC"
-  ],
   "ignore": [
     "doc/",
     "lib/",
     "package.json"
-  ]
+  ],
+  "keywords": [
+    "Kurento"
+  ],
+  "license": "LGPL",
+  "homepage": "http://www.kurento.com",
+  "authors": [
+    "Kurento <info@kurento.com> (http://kurento.org)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "Kurento/kurento-module-platedetector-js"
+  }
 }
