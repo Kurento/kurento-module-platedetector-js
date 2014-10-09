@@ -1,6 +1,6 @@
 {
   "name": "kurento-module-platedetector",
-  "version": "1.0.2",
+  "version": "1.0.3-dev",
   "description": "Plate Detector Filter",
   "main": "lib/index.js",
   "keywords": [
