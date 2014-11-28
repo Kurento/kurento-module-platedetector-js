@@ -19,8 +19,6 @@ exists('node_modules', function(found)
           npm.commands.install(function(error, data)
           {
             if(error) return console.error(error)
-
-            console.log(data)
           })
         })
       }
