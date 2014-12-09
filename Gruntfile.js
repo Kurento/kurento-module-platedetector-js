@@ -23,11 +23,6 @@ module.exports = function(grunt)
   // Project configuration.
   grunt.initConfig({
     pkg: pkg,
-    bower:
-    {
-      TOKEN:      process.env.TOKEN,
-      repository: 'Kurento/kurento-module-platedetector-js'
-    },
 
     // Plugins configuration
     clean:
@@ -36,20 +31,6 @@ module.exports = function(grunt)
 
       'browser': DIST_DIR,
       'code': 'lib'
-    },
-
-    // Generate documentation
-    jsdoc:
-    {
-      all:
-      {
-        src: [
-          'README.md',
-          'lib/**/*.js',
-          'test/*.js'
-        ],
-        dest: 'doc/jsdoc'
-      }
     },
 
     // Check if Kurento Module Creator exists
@@ -63,28 +44,23 @@ module.exports = function(grunt)
       }
     },
 
-    shell:
+    bower:
     {
-      // Generate the Kurento Javascript client
-      kmd: {
-        command: [
-          'mkdir -p ./lib',
-          'kurento-module-creator --delete'
-          +' --templates node_modules/kurento-client/templates'
-          +' --deprom node_modules/kurento-client-core/src'
-          +' --deprom node_modules/kurento-client-elements/src'
-          +' --deprom node_modules/kurento-client-filters/src'
-          +' --rom ./src --codegen ./lib'
-        ].join('&&')
-      },
+      TOKEN:      process.env.TOKEN,
+      repository: 'Kurento/kurento-module-platedetector-js'
+    },
 
-      // Publish / update package info in Bower
-      bower: {
-        command: [
-          'curl -X DELETE "https://bower.herokuapp.com/packages/<%= pkg.name %>?auth_token=<%= bower.TOKEN %>"',
-          'node_modules/.bin/bower register <%= pkg.name %> <%= bower.repository %>',
-          'node_modules/.bin/bower cache clean'
-        ].join('&&')
+    // Generate documentation
+    jsdoc:
+    {
+      all:
+      {
+        src: [
+          'README.md',
+          'lib/**/*.js',
+          'test/*.js'
+        ],
+        dest: 'doc/jsdoc'
       }
     },
 
@@ -173,6 +149,31 @@ module.exports = function(grunt)
             main: DIST_DIR+'/<%= pkg.name %>.js'
           }
         }
+      }
+    },
+
+    shell:
+    {
+      // Publish / update package info in Bower
+      bower: {
+        command: [
+          'curl -X DELETE "https://bower.herokuapp.com/packages/<%= pkg.name %>?auth_token=<%= bower.TOKEN %>"',
+          'node_modules/.bin/bower register <%= pkg.name %> <%= bower.repository %>',
+          'node_modules/.bin/bower cache clean'
+        ].join('&&')
+      },
+
+      // Generate the Kurento Javascript client
+      kmd: {
+        command: [
+          'mkdir -p ./lib',
+          'kurento-module-creator --delete'
+          +' --templates node_modules/kurento-client/templates'
+          +' --deprom node_modules/kurento-client-core/src'
+          +' --deprom node_modules/kurento-client-elements/src'
+          +' --deprom node_modules/kurento-client-filters/src'
+          +' --rom ./src --codegen ./lib'
+        ].join('&&')
       }
     }
   });
