@@ -1,18 +1,12 @@
 #!/usr/bin/env node
 
-var jsonfile = require('jsonfile')
-var npm      = require('npm')
+var npm = require('npm')
 
 var exists = require('fs').exists
 
+var jsonfile  = require('jsonfile')
 var recursive = require('merge').recursive
 
-
-function onerror(error, code)
-{
-  console.trace(error)
-  process.exit(code)
-}
 
 function updateFile(file, obj, callback)
 {
@@ -22,6 +16,12 @@ function updateFile(file, obj, callback)
 
     jsonfile.writeFile(file, recursive(orig, obj), callback)
   })
+}
+
+function onerror(error, code)
+{
+  console.trace(error)
+  process.exit(code)
 }
 
 
