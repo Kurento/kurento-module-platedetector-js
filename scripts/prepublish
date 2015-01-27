@@ -4,12 +4,12 @@ var npm = require('npm')
 
 var exists = require('fs').exists
 
-var jsonfile  = require('jsonfile')
-var recursive = require('merge').recursive
-
 
 function updateFile(file, obj, callback)
 {
+  var jsonfile  = require('jsonfile')
+  var recursive = require('merge').recursive
+
   jsonfile.readFile(file, function(error, orig)
   {
     if(error) return callback(error)
