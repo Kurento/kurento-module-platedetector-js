@@ -1,6 +1,6 @@
 {
   "name": "platedetector",
-  "version": "1.0.4-dev",
+  "version": "1.0.4",
   "kurentoVersion": "^5.0.0",
   "imports": [
     {
@@ -28,13 +28,13 @@
         "nodeName": "kurento-module-platedetector",
         "npmDescription": "Plate Detector Filter",
         "npmGit": "Kurento/kurento-module-platedetector-js",
-        "npmVersion": "Kurento/kurento-module-platedetector-js#develop"
+        "npmVersion": "1.0.4"
       },
       "java": {
         "mavenGroupId": "org.kurento.module",
         "packageName": "org.kurento.module.platedetector",
         "mavenArtifactId": "platedetector",
-        "mavenVersion": "1.0.4-SNAPSHOT"
+        "mavenVersion": "1.0.4"
       }
     },
     "implementation": {
