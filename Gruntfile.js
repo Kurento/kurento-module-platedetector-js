@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2014 Kurento (http://kurento.org/)
+ * (C) Copyright 2014-2015 Kurento (http://kurento.org/)
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
@@ -20,6 +20,8 @@ module.exports = function(grunt)
 
   var pkg = grunt.file.readJSON('package.json');
 
+  const PKG_BROWSER = 'lib/browser.js';
+
   // Project configuration.
   grunt.initConfig({
     pkg: pkg,
@@ -27,21 +29,8 @@ module.exports = function(grunt)
     // Plugins configuration
     clean:
     {
-      'doc': '<%= jsdoc.all.dest %>',
-
-      'browser': DIST_DIR,
-      'code': 'lib'
-    },
-
-    // Check if Kurento Module Creator exists
-    'path-check':
-    {
-      'generate plugin': {
-        src: 'kurento-module-creator',
-        options: {
-          tasks: ['shell:kmd']
-        }
-      }
+      'doc':     '<%= jsdoc.all.dest %>',
+      'browser': DIST_DIR
     },
 
     bower:
@@ -68,31 +57,25 @@ module.exports = function(grunt)
     browserify:
     {
       options: {
-        external: ['kurento-client']
+        alias:    ['.:<%= pkg.name %>'],
+        external: [
+          'es6-promise',
+          'inherits',
+          'kurento-client',
+          'promisecallback'
+        ]
       },
 
-      'require':
+      'standard':
       {
-        src:  '<%= pkg.main %>',
-        dest: DIST_DIR+'/<%= pkg.name %>_require.js'
+        src:  PKG_BROWSER,
+        dest: DIST_DIR+'/<%= pkg.name %>.js'
       },
 
-      'standalone':
+      'minified':
       {
-        src:  '<%= pkg.main %>',
-        dest: DIST_DIR+'/<%= pkg.name %>.js',
-
-        options: {
-          browserifyOptions: {
-            standalone: '<%= pkg.name %>',
-          }
-        }
-      },
-
-      'require minified':
-      {
-        src:  '<%= pkg.main %>',
-        dest: DIST_DIR+'/<%= pkg.name %>_require.min.js',
+        src:  PKG_BROWSER,
+        dest: DIST_DIR+'/<%= pkg.name %>.min.js',
 
         options:
         {
@@ -103,29 +86,8 @@ module.exports = function(grunt)
             ['minifyify',
              {
                compressPath: DIST_DIR,
-               map: '<%= pkg.name %>.map'
-             }]
-          ]
-        }
-      },
-
-      'standalone minified':
-      {
-        src:  '<%= pkg.main %>',
-        dest: DIST_DIR+'/<%= pkg.name %>.min.js',
-
-        options:
-        {
-          browserifyOptions: {
-            debug: true,
-            standalone: '<%= pkg.name %>'
-          },
-          plugin: [
-            ['minifyify',
-             {
-               compressPath: DIST_DIR,
-               map: '<%= pkg.name %>.map',
-               output: DIST_DIR+'/<%= pkg.name %>.map'
+               map:          '<%= pkg.name %>.map',
+               output:       DIST_DIR+'/<%= pkg.name %>.map'
              }]
           ]
         }
@@ -161,34 +123,18 @@ module.exports = function(grunt)
           'node_modules/.bin/bower register <%= pkg.name %> <%= bower.repository %>',
           'node_modules/.bin/bower cache clean'
         ].join('&&')
-      },
-
-      // Generate the Kurento Javascript client
-      kmd: {
-        command: [
-          'mkdir -p ./lib',
-          'kurento-module-creator --delete'
-          +' --templates node_modules/kurento-client/templates'
-          +' --deprom node_modules/kurento-client-core/src'
-          +' --deprom node_modules/kurento-client-elements/src'
-          +' --deprom node_modules/kurento-client-filters/src'
-          +' --rom ./src --codegen ./lib'
-        ].join('&&')
       }
     }
   });
 
   // Load plugins
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-path-check');
-  grunt.loadNpmTasks('grunt-shell');
-
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-npm2bower-sync');
+  grunt.loadNpmTasks('grunt-shell');
 
   // Alias tasks
-  grunt.registerTask('generate', ['path-check:generate plugin', 'browserify']);
-  grunt.registerTask('default',  ['clean', 'jsdoc', 'generate', 'sync:bower']);
-  grunt.registerTask('bower',    ['shell:bower']);
+  grunt.registerTask('default', ['clean', 'jsdoc', 'browserify', 'sync:bower']);
+  grunt.registerTask('bower',   ['shell:bower']);
 };

@@ -1,5 +1,4 @@
 dist/
 doc/
-node_modules/
 bower.json
 Gruntfile.js
