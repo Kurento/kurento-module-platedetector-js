@@ -26,9 +26,6 @@
     "grunt-shell": "^1.1.2",
     "minifyify": "^6.4.0"
   },
-  "peerDependencies": {
-    "kurento-client": "Kurento/kurento-client-js"
-  },
   "keywords": [
     "Kurento",
     "module",
