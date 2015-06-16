@@ -1,0 +1,93 @@
+{
+  "name": "platedetector",
+  "version": "6.0.0-dev",
+  "kurentoVersion": "6.0.0-dev",
+  "imports": [
+    {
+      "name": "core",
+      "version": "6.0.0-dev",
+      "mavenVersion": "6.0.0-SNAPSHOT",
+      "npmVersion": "Kurento/kurento-client-core-js"
+    },
+    {
+      "name": "elements",
+      "version": "6.0.0-dev",
+      "mavenVersion": "6.0.0-SNAPSHOT",
+      "npmVersion": "Kurento/kurento-client-elements-js"
+    },
+    {
+      "name": "filters",
+      "version": "6.0.0-dev",
+      "mavenVersion": "6.0.0-SNAPSHOT",
+      "npmVersion": "Kurento/kurento-client-filters-js"
+    }
+  ],
+  "code": {
+    "api": {
+      "js": {
+        "nodeName": "kurento-module-platedetector",
+        "npmDescription": "Plate Detector Filter",
+        "npmGit": "Kurento/kurento-module-platedetector-js",
+        "npmVersion": "Kurento/kurento-module-platedetector-js"
+      },
+      "java": {
+        "mavenGroupId": "org.kurento.module",
+        "packageName": "org.kurento.module.platedetector",
+        "mavenArtifactId": "platedetector",
+        "mavenVersion": "6.0.0-SNAPSHOT"
+      }
+    },
+    "implementation": {
+      "lib": "libkmsplatedetector",
+      "cppNamespace": "kurento::module::platedetector"
+    }
+  },
+  "remoteClasses": [
+    {
+      "name": "PlateDetectorFilter",
+      "doc": "PlateDetectorFilter interface. This type of :rom:cls:`Endpoint` detects\nvehicle plates in a video feed.",
+      "extends": "Filter",
+      "constructor": {
+        "params": [
+          {
+            "name": "mediaPipeline",
+            "doc": "the parent :rom:cls:`MediaPipeline` of this :rom:cls:`PlateDetectorFilter`",
+            "type": "MediaPipeline"
+          }
+        ],
+        "doc": "Create a :rom:cls:`PlateDetectorFilter` for the given :rom:cls:`MediaPipeline`"
+      },
+      "methods": [
+        {
+          "params": [
+            {
+              "name": "plateWidthPercentage",
+              "doc": "average width of the license plates represented as an image percentage [0..1].",
+              "type": "float"
+            }
+          ],
+          "name": "setPlateWidthPercentage",
+          "doc": "Configures the average width of the license plates in the image represented as an image percentage."
+        }
+      ],
+      "events": [
+        "PlateDetected"
+      ]
+    }
+  ],
+  "complexTypes": [],
+  "events": [
+    {
+      "properties": [
+        {
+          "name": "plate",
+          "doc": "Plate identification that was detected by the filter",
+          "type": "String"
+        }
+      ],
+      "extends": "Media",
+      "name": "PlateDetected",
+      "doc": "Event raised by a :rom:cls:`PlateDetectorFilter` when a plate is found in the data streamed."
+    }
+  ]
+}
