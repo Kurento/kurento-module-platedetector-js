@@ -1,25 +1,25 @@
 {
   "name": "platedetector",
-  "version": "6.6.1-dev",
-  "kurentoVersion": "^6.1.0",
+  "version": "6.7.1-dev",
+  "kurentoVersion": "^6.7.0",
   "imports": [
     {
       "name": "core",
-      "version": "^6.1.0",
-      "mavenVersion": "[6.1.0,7.0.0-SNAPSHOT)",
-      "npmVersion": ">=6.1.0 <7.0.0"
+      "version": "^6.7.0",
+      "mavenVersion": "[6.7.0,7.0.0-SNAPSHOT)",
+      "npmVersion": ">=6.7.0 <7.0.0"
     },
     {
       "name": "elements",
-      "version": "^6.1.0",
-      "mavenVersion": "[6.1.0,7.0.0-SNAPSHOT)",
-      "npmVersion": ">=6.1.0 <7.0.0"
+      "version": "^6.7.0",
+      "mavenVersion": "[6.7.0,7.0.0-SNAPSHOT)",
+      "npmVersion": ">=6.7.0 <7.0.0"
     },
     {
       "name": "filters",
-      "version": "^6.1.0",
-      "mavenVersion": "[6.1.0,7.0.0-SNAPSHOT)",
-      "npmVersion": ">=6.1.0 <7.0.0"
+      "version": "^6.7.0",
+      "mavenVersion": "[6.7.0,7.0.0-SNAPSHOT)",
+      "npmVersion": ">=6.7.0 <7.0.0"
     }
   ],
   "code": {
@@ -32,14 +32,14 @@
       },
       "java": {
         "mavenGroupId": "org.kurento.module",
-        "packageName": "org.kurento.module.platedetector",
         "mavenArtifactId": "platedetector",
-        "mavenVersion": "6.6.1-SNAPSHOT"
+        "mavenVersion": "6.7.1-SNAPSHOT",
+        "packageName": "org.kurento.module.platedetector"
       }
     },
     "implementation": {
-      "lib": "libkmsplatedetector",
-      "cppNamespace": "kurento::module::platedetector"
+      "cppNamespace": "kurento::module::platedetector",
+      "lib": "libkmsplatedetector"
     }
   },
   "remoteClasses": [
