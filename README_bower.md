@@ -13,7 +13,7 @@ kurento-module-platedetector-bower
 This repository host the auto-generated JavaScript client for [Kurento]
 module "platedetector" to be published in [Bower].
 
-Module "platedetector" description: Plate Detector Filter
+Module "platedetector" description: JavaScript Client API for Kurento Media Server
 
 What is Kurento
 ---------------

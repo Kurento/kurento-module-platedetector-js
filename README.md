@@ -12,7 +12,7 @@ kurento-module-platedetector-js
 
 This repository host the auto-generated JavaScript client for [Kurento] module "platedetector".
 
-Module "platedetector" description: Plate Detector Filter
+Module "platedetector" description: JavaScript Client API for Kurento Media Server
 
 What is Kurento
 ---------------

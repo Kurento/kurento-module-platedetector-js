@@ -26,7 +26,7 @@
     "api": {
       "js": {
         "nodeName": "kurento-module-platedetector",
-        "npmDescription": "Plate Detector Filter",
+        "npmDescription": "JavaScript Client API for Kurento Media Server",
         "npmGit": "Kurento/kurento-module-platedetector-js",
         "npmVersion": "Kurento/kurento-module-platedetector-js"
       },
