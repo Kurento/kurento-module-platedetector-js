@@ -1,6 +1,6 @@
 {
   "name": "platedetector",
-  "version": "6.7.1-dev",
+  "version": "6.14.1-dev",
   "kurentoVersion": "^6.7.0",
   "imports": [
     {
@@ -33,7 +33,7 @@
       "java": {
         "mavenGroupId": "org.kurento.module",
         "mavenArtifactId": "platedetector",
-        "mavenVersion": "6.7.1-SNAPSHOT",
+        "mavenVersion": "6.14.1-SNAPSHOT",
         "packageName": "org.kurento.module.platedetector"
       }
     },
