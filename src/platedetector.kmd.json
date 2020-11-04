@@ -1,6 +1,6 @@
 {
   "name": "platedetector",
-  "version": "6.14.1-dev",
+  "version": "6.15.0",
   "kurentoVersion": "^6.7.0",
   "imports": [
     {
@@ -28,12 +28,12 @@
         "nodeName": "kurento-module-platedetector",
         "npmDescription": "JavaScript Client API for Kurento Media Server",
         "npmGit": "Kurento/kurento-module-platedetector-js",
-        "npmVersion": "Kurento/kurento-module-platedetector-js"
+        "npmVersion": "6.15.0"
       },
       "java": {
         "mavenGroupId": "org.kurento.module",
         "mavenArtifactId": "platedetector",
-        "mavenVersion": "6.14.1-SNAPSHOT",
+        "mavenVersion": "6.15.0",
         "packageName": "org.kurento.module.platedetector"
       }
     },
